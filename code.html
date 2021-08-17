@@ -21,7 +21,7 @@
 <!--Nav Section-->
 <nav class="navbar navbar-expand-md navbar-dark fixed-top">
     <div class="container-fluid">
-        <img src="img/codewheel-favicon.png" height="24px" class="d-inline-block align-text-top" /><a class="navbar-brand" href="#">&nbsp; App Template</a>
+        <img src="img/codewheel-favicon.png" height="24px" class="d-inline-block align-text-top" /><a class="navbar-brand" href="#">&nbsp; Rewind</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -52,10 +52,40 @@
                <div class="col-lg-8">
                    <pre class="line-numbers">
                        <code class="language-javascript">
-                        //Call hello world
-                        function helloWorld() {
-                            alert("hellow world");
+                        //Get the values from the page.
+                        //control
+                        function getString() {
+                            document.getElementById("alert").classList.add("invisible");
+                            let userString = document.getElementById("userString").value;
+                            let revString = reverseString(userString);
+                            displayString(revString);
+                            //Reverse the string
+                        //logic
+                        function reverseString(userString) {
+                            let revString = [];
+
+
+
+                            //reverse it using a for loop
+                            for (let index = userString.length - 1; index >= 0; index--) {
+                                revString += userString[index];
+                                
+                            }
+                            return revString
                         }
+                        //display the string in the p tag we made
+                        //view result
+                        function displayString() {
+                            //write to the page
+                            document.getElementById("msg").innerHTML = `Your string reversed is:  ${revString}`;
+
+
+                            //show the box
+                            document.getElementById("alert").classList.remove("invisible");
+
+                        }
+                        }
+
                        </code>
                    </pre>
                </div>
@@ -74,7 +104,7 @@
             <div class="row row-cols-1 row-cols-lg-3 gy-2">
                 <div class="col order-last order-lg-first ">
                     <div>
-                        <span class="text-muted">&copy;2021</span> Christina Wheeler | emailnotreadysorry
+                        <span class="text-muted">&copy;2021</span> Christina W. | emailnotreadysorry
                     </div>
                 </div>
                 <div class="col d-flex align-items-center justify-content-start justify-content-lg-center">
